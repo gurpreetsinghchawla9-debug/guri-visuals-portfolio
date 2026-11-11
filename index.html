@@ -4,222 +4,470 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#eee5d8">
-  <meta name="description" content="GURI VISUALS — Cinematic videography, cafe films, photography and brand visuals. Capture. Create. Connect.">
+  <meta name="theme-color" content="#EDE3D2">
+
   <title>GURI VISUALS | Capture. Create. Connect.</title>
+
+  <meta name="description" content="GURI VISUALS - Premium photography, cinematic videography, cafe and food films, events, product photography and brand promotion.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --bg: #EDE3D2;
+      --surface: #F7F1E7;
+      --brown: #38271D;
+      --brown-light: #624B39;
+      --bronze: #A47A50;
+      --muted: #806D5A;
+      --line: rgba(56,39,29,.18);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--brown);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 5%;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .nav-links a:hover {
+      color: var(--bronze);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      background: var(--brown);
+      color: #fffaf2;
+      border: 1px solid var(--brown);
+      font-size: 13px;
+      letter-spacing: .5px;
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--bronze);
+      border-color: var(--bronze);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--brown);
+    }
+
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--bronze);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 90px);
+      line-height: 1.08;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 32px;
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 600px;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .work-card {
+      background: var(--surface);
+      padding: 12px;
+      border: 1px solid var(--line);
+    }
+
+    .work-card video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: #211810;
+    }
+
+    .work-info {
+      padding: 17px 5px 8px;
+    }
+
+    .work-info h3 {
+      font-size: 21px;
+      margin-bottom: 6px;
+    }
+
+    .work-info p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      padding: 28px 22px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .about {
+      background: var(--brown);
+      color: #F7F1E7;
+    }
+
+    .about p {
+      color: #D4C4B0;
+      max-width: 680px;
+      line-height: 2;
+      margin-top: 20px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin: 15px auto 28px;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 27px 5%;
+      text-align: center;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    @media(max-width: 700px) {
+      nav {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .nav-links {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .work-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 500px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <header class="navbar">
-    <a class="brand" href="#home">GURI <span>VISUALS</span></a>
+  <nav>
+    <a href="#" class="logo">GURI VISUALS.</a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
-
-    <nav id="navMenu">
+    <div class="nav-links">
       <a href="#home">Home</a>
-      <a href="#work">Selected Work</a>
+      <a href="#work">My Work</a>
+      <a href="#services">Services</a>
       <a href="#about">About</a>
-      <a href="#contact" class="nav-cta">Let's Work Together</a>
-    </nav>
-  </header>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
   <main>
 
     <section class="hero" id="home">
       <div class="hero-content">
-        <p class="eyebrow">INDEPENDENT VISUAL CREATOR · JALANDHAR, INDIA</p>
+        <div class="eyebrow">Photography · Cinematography · Creativity</div>
 
-        <h1>Turning moments<br>into <em>visual stories.</em></h1>
+        <h1>Every Frame<br>Has a Story.</h1>
 
-        <p class="hero-description">
-          Cinematic videos, creative photography and visual content
-          for cafes, brands, businesses and people.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#work" class="btn btn-dark">Explore My Work ↗</a>
-          <a href="#contact" class="text-link">Let's create something</a>
-        </div>
-      </div>
-
-      <div class="hero-side">
-        <span class="hero-number">GV — 01</span>
-        <div class="hero-line"></div>
-        <span class="vertical-text">CAPTURE · CREATE · CONNECT</span>
-      </div>
-
-      <div class="hero-bottom">
-        <span>PHOTOGRAPHY</span>
-        <span>VIDEOGRAPHY</span>
-        <span>BRAND VISUALS</span>
-      </div>
-    </section>
-
-    <section class="intro section-padding">
-      <p class="eyebrow">THE CREATIVE APPROACH</p>
-      <h2>Every frame has a feeling.<br><em>Let's make it unforgettable.</em></h2>
-      <p class="intro-copy">
-        From the atmosphere of a cafe to the details of a product,
-        I create visuals that help people see your story differently.
-      </p>
-    </section>
-
-    <section class="work section-padding" id="work">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">A LOOK THROUGH MY LENS</p>
-          <h2>Selected <em>work.</em></h2>
-        </div>
-        <p class="section-note">A collection of original cinematic shots.</p>
-      </div>
-
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">All Work</button>
-        <button class="filter-btn" data-filter="exterior">Cafe Exterior</button>
-        <button class="filter-btn" data-filter="interior">Cafe Interior</button>
-      </div>
-
-      <div class="video-grid">
-
-        <article class="work-card" data-category="exterior">
-          <div class="video-wrap">
-            <video src="videos/IMG_0681.mp4" controls muted playsinline preload="metadata"></video>
-            <span class="video-label">01 / EXTERIOR FILM</span>
-          </div>
-          <div class="work-caption">
-            <div>
-              <h3>Neon After Hours</h3>
-              <p>Cafe Exterior · Cinematic Video</p>
-            </div>
-            <span>01</span>
-          </div>
-        </article>
-
-        <article class="work-card" data-category="exterior">
-          <div class="video-wrap">
-            <video src="videos/IMG_0675.mp4" controls muted playsinline preload="metadata"></video>
-            <span class="video-label">02 / EXTERIOR FILM</span>
-          </div>
-          <div class="work-caption">
-            <div>
-              <h3>Lights & Details</h3>
-              <p>Cafe Exterior · Cinematic Video</p>
-            </div>
-            <span>02</span>
-          </div>
-        </article>
-
-        <article class="work-card" data-category="interior">
-          <div class="video-wrap">
-            <video src="videos/IMG_0639.mp4" controls muted playsinline preload="metadata"></video>
-            <span class="video-label">03 / INTERIOR FILM</span>
-          </div>
-          <div class="work-caption">
-            <div>
-              <h3>Inside the Atmosphere</h3>
-              <p>Cafe Interior · Cinematic Video</p>
-            </div>
-            <span>03</span>
-          </div>
-        </article>
-
-        <article class="work-card" data-category="interior">
-          <div class="video-wrap">
-            <video src="videos/IMG_0630.mp4" controls muted playsinline preload="metadata"></video>
-            <span class="video-label">04 / INTERIOR FILM</span>
-          </div>
-          <div class="work-caption">
-            <div>
-              <h3>Spaces & Perspectives</h3>
-              <p>Cafe Interior · Cinematic Video</p>
-            </div>
-            <span>04</span>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="services section-padding">
-      <p class="eyebrow">WHAT I CREATE</p>
-      <h2>Visuals for <em>every story.</em></h2>
-
-      <div class="service-grid">
-        <div class="service-item">
-          <span>01</span>
-          <h3>Cafe & Food Films</h3>
-          <p>Atmosphere, food details and cinematic cafe reels.</p>
-        </div>
-
-        <div class="service-item">
-          <span>02</span>
-          <h3>Events & Personal</h3>
-          <p>Birthdays, celebrations, portraits and special moments.</p>
-        </div>
-
-        <div class="service-item">
-          <span>03</span>
-          <h3>Product Photography</h3>
-          <p>Creative product visuals that make details stand out.</p>
-        </div>
-
-        <div class="service-item">
-          <span>04</span>
-          <h3>Brand Promotion</h3>
-          <p>Visual storytelling for businesses and growing brands.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="about section-padding" id="about">
-      <div class="about-number">GV.</div>
-      <div class="about-content">
-        <p class="eyebrow">BEHIND THE CAMERA</p>
-        <h2>Hey, I'm <em>Guri.</em></h2>
         <p>
-          I'm an independent visual creator based in Jalandhar, Punjab.
-          I enjoy capturing spaces, details and moments through a
-          cinematic perspective.
+          Creating premium visuals, cinematic films and unforgettable
+          brand experiences. Let's turn your ideas into something
+          worth remembering.
         </p>
-        <p>
-          My focus is simple: create thoughtful visuals that feel
-          authentic, look premium and tell a story.
-        </p>
-        <span class="signature">GURI VISUALS</span>
+
+        <div class="hero-buttons">
+          <a class="btn" href="https://gurpreetsinghchawla9-debug.github.io/Guri-visuals/" target="_blank" rel="noopener">
+            BOOK A SHOOT
+          </a>
+
+          <a class="btn btn-outline" href="#work">
+            EXPLORE MY WORK
+          </a>
+        </div>
       </div>
     </section>
 
-    <section class="contact section-padding" id="contact">
-      <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
-      <h2>Let's create something<br><em>worth remembering.</em></h2>
-      <p>Tell me what you're planning. Let's bring your idea to life.</p>
+    <section id="work">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Selected Creations</div>
+          <h2>My Creative Work.</h2>
+          <p>A collection of cinematic visuals, cafe films and creative storytelling.</p>
+        </div>
 
-      <div class="contact-actions">
-        <a class="btn btn-light" href="https://gurpreetsinghchawla9-debug.github.io/Guri-visuals/">
-          Book a Shoot ↗
-        </a>
+        <div class="work-grid">
 
-        <a class="btn btn-outline-light" href="https://wa.me/916239750615?text=Hello%20GURI%20VISUALS%2C%20I%20want%20to%20discuss%20a%20shoot.">
-          WhatsApp Me ↗
-        </a>
+          <div class="work-card">
+            <video controls playsinline preload="metadata">
+              <source src="IMG_0681.mp4" type="video/mp4">
+              Your browser does not support video.
+            </video>
+            <div class="work-info">
+              <h3>Cafe Cinematic</h3>
+              <p>Food & Cafe Visuals</p>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <video controls playsinline preload="metadata">
+              <source src="IMG_0675.mp4" type="video/mp4">
+              Your browser does not support video.
+            </video>
+            <div class="work-info">
+              <h3>Visual Storytelling</h3>
+              <p>Cinematic Cafe Film</p>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <video controls playsinline preload="metadata">
+              <source src="IMG_0639.mp4" type="video/mp4">
+              Your browser does not support video.
+            </video>
+            <div class="work-info">
+              <h3>Interior Moments</h3>
+              <p>Space & Ambience</p>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <video controls playsinline preload="metadata">
+              <source src="IMG_0630.mp4" type="video/mp4">
+              Your browser does not support video.
+            </video>
+            <div class="work-info">
+              <h3>Details in Focus</h3>
+              <p>Cafe Photography & Film</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">What I Create</div>
+          <h2>My Services.</h2>
+          <p>Creative visual solutions for businesses, brands and special moments.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card">
+            <h3>Cafe & Food Shoots</h3>
+            <p>Premium food photography, cafe reels and cinematic ambience videos.</p>
+          </div>
+
+          <div class="service-card">
+            <h3>Reels & Cinematic Videos</h3>
+            <p>Creative short-form videos made to capture attention.</p>
+          </div>
+
+          <div class="service-card">
+            <h3>Events & Birthdays</h3>
+            <p>Capturing special occasions and memorable celebrations.</p>
+          </div>
+
+          <div class="service-card">
+            <h3>Product Photography</h3>
+            <p>Clean and attractive product visuals for your brand.</p>
+          </div>
+
+          <div class="service-card">
+            <h3>Brand Promotion</h3>
+            <p>Visual content to help businesses build their online presence.</p>
+          </div>
+
+          <div class="service-card">
+            <h3>Custom Shoots</h3>
+            <p>Have a creative idea? Let's bring it to life together.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="eyebrow">Behind The Camera</div>
+        <h2>Hi, I'm Guri.</h2>
+
+        <p>
+          I'm a passionate visual creator focused on photography,
+          cinematic videography and creative storytelling.
+          Through GURI VISUALS, I help cafes, businesses and brands
+          present themselves through meaningful visuals.
+          <br><br>
+          My vision is simple: create content that looks beautiful,
+          feels authentic and tells a story.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="eyebrow">Let's Work Together</div>
+        <h2>Have a Project in Mind?</h2>
+
+        <p>
+          Let's create something special for your brand,
+          business or next big moment.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn" href="https://gurpreetsinghchawla9-debug.github.io/Guri-visuals/" target="_blank" rel="noopener">
+            BOOK A SHOOT
+          </a>
+
+          <a class="btn btn-outline" href="https://wa.me/916239750615" target="_blank" rel="noopener">
+            WHATSAPP ME
+          </a>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="footer">
-    <a class="brand" href="#home">GURI <span>VISUALS</span></a>
-    <p>CAPTURE. CREATE. CONNECT.</p>
-    <span>© <span id="year"></span> GURI VISUALS. All rights reserved.</span>
+  <footer>
+    © <span id="year"></span> GURI VISUALS. CAPTURE. CREATE. CONNECT.
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
+
